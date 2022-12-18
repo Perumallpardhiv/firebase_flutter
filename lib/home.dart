@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth1/auth/auth.dart';
+import 'package:flutter_auth1/photo.dart';
 import 'package:flutter_auth1/settings/information.dart';
 import 'package:flutter_auth1/pagesAuth/signIn.dart';
 import 'package:flutter_auth1/profilePage/profileEdit.dart';
@@ -97,17 +98,26 @@ class _homeState extends State<home> {
                       ],
                       shape: BoxShape.circle,
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: '${details!['imageUrl']}' == ""
-                          ? Image.network(
-                              'https://firebasestorage.googleapis.com/v0/b/fir-authentication-ab7c1.appspot.com/o/users%2Fprofile.jpg?alt=media&token=5daf7dda-6965-4b9e-a124-107994c11970',
-                              fit: BoxFit.cover,
-                            )
-                          : Image.network(
-                              '${details['imageUrl']}',
-                              fit: BoxFit.cover,
-                            ),
+                    child: GestureDetector(
+                      onTap: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) =>
+                                    photo(details['imageUrl'])));
+                      }),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: '${details!['imageUrl']}' == ""
+                            ? Image.network(
+                                'https://firebasestorage.googleapis.com/v0/b/fir-authentication-ab7c1.appspot.com/o/users%2Fprofile.jpg?alt=media&token=5daf7dda-6965-4b9e-a124-107994c11970',
+                                fit: BoxFit.cover,
+                              )
+                            : Image.network(
+                                '${details['imageUrl']}',
+                                fit: BoxFit.cover,
+                              ),
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
@@ -163,8 +173,6 @@ class _homeState extends State<home> {
                     text: "My Account",
                     icon: Icons.person,
                     press: () {
-                      print(MediaQuery.of(context).size.height);
-                      print(MediaQuery.of(context).size.width);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (builder) => profileView()),
