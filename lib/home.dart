@@ -130,28 +130,39 @@ class _homeState extends State<home> {
                   SizedBox(
                     height: 20,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (builder) => profileEdit()));
-                    },
-                    child: Container(
-                      height: 60,
-                      width: MediaQuery.of(context).size.width - 200,
-                      child: Card(
-                        elevation: 7,
-                        color: Colors.brown,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side: BorderSide(
-                            width: 1.5,
-                            color: Colors.brown,
+                  Transform(
+                    transform: Matrix4.skewX(0.2)..translate(-3.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (builder) => profileEdit()));
+                      },
+                      child: Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width - 220,
+                        child: Card(
+                          elevation: 7,
+                          color: Colors.brown,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            side: BorderSide(
+                              width: 1.5,
+                              color: Colors.brown,
+                            ),
                           ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Edit Profile',
-                            style: TextStyle(color: Colors.white),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: 30,
+                            ),
+                            child: Transform(
+                              transform: Matrix4.skewX(-0.5)..translate(-3.0),
+                              child: Center(
+                                child: Text(
+                                  'Edit Profile',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
