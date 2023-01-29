@@ -285,23 +285,26 @@ class _signupState extends State<signup> {
                       // add user details for profile page
                       var user = await FirebaseAuth.instance.currentUser;
 
-                      await FirebaseFirestore.instance
-                          .collection("users")
-                          .doc(user!.uid)
-                          .set(
-                        {
-                          'uid': user.uid,
-                          'user name': _userNameCont.text.trim(),
-                          'phone number': int.parse(_phoneNumCont.text.trim()),
-                          'email': _emailCont.text.trim(),
-                          'description': _descCont.text.trim(),
-                          'imageUrl': '',
-                          'joinedAt': formattedData,
-                          'createdAt': Timestamp.now(),
-                          'github': 'https://github.com/',
-                          'linkDin': 'https://www.linkedin.com/',
-                        },
-                      );
+                      if (user != null) {
+                        await FirebaseFirestore.instance
+                            .collection("users")
+                            .doc(user.uid)
+                            .set(
+                          {
+                            'uid': user.uid,
+                            'user name': _userNameCont.text.trim(),
+                            'phone number':
+                                int.parse(_phoneNumCont.text.trim()),
+                            'email': _emailCont.text.trim(),
+                            'description': _descCont.text.trim(),
+                            'imageUrl': '',
+                            'joinedAt': formattedData,
+                            'createdAt': Timestamp.now(),
+                            'github': 'https://github.com/',
+                            'linkDin': 'https://www.linkedin.com/',
+                          },
+                        );
+                      }
                     } else {
                       final snackbar = SnackBar(
                           content: Text(
