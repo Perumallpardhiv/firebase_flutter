@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth1/auth/auth.dart';
+import 'package:flutter_auth1/notifications/notifications.dart';
 import 'package:flutter_auth1/photo.dart';
 import 'package:flutter_auth1/settings/information.dart';
 import 'package:flutter_auth1/pagesAuth/signIn.dart';
@@ -60,24 +61,35 @@ class _homeState extends State<home> {
                   Row(
                     children: [
                       Expanded(
-                          child: Padding(
-                        padding: const EdgeInsets.only(left: 37),
-                        child: Text(
-                          'PROFILE',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Color.fromARGB(255, 71, 47, 38),
-                            fontSize: 26,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 37),
+                          child: Text(
+                            'PROFILE',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Color.fromARGB(255, 71, 47, 38),
+                              fontSize: 26,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
-                      )),
-                      Padding(
-                        padding: EdgeInsets.only(right: 7),
-                        child: Icon(
-                          Icons.person_outline,
-                          color: Colors.brown,
-                          size: 30,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Notifications(),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(right: 7),
+                          child: Icon(
+                            Icons.person_outline,
+                            color: Colors.brown,
+                            size: 30,
+                          ),
                         ),
                       ),
                     ],
