@@ -134,8 +134,11 @@ class _homeState extends State<home> {
                     transform: Matrix4.skewX(0.2)..translate(-3.0),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (builder) => profileEdit()));
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (builder) => profileEdit(),
+                          ),
+                        );
                       },
                       child: Container(
                         height: 60,

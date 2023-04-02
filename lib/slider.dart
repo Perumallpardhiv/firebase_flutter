@@ -93,8 +93,11 @@ class _sliderHomeState extends State<sliderHome> {
                           (route) => false)
                       : Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (builder) => signin()),
-                          (route) => false);
+                          MaterialPageRoute(
+                            builder: (builder) => signin(),
+                          ),
+                          (route) => false,
+                        );
                 },
               ),
             ],
