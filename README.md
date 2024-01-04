@@ -1,16 +1,46 @@
-# flutter_auth1
+# Firebase Flutter
 
-A new Flutter project.
+## Introduction
+Our state-of-the-art application leverages the full spectrum of Firebase's robust features, seamlessly integrated into the Flutter framework for a cutting-edge fitness experience. This app doesn't just utilize Firebase; it harnesses its capabilities to redefine the way users engage with their fitness journey.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Screenshots
+![](/assets/screenshots/1.jpeg?raw=true "Optional Title") | ![](/assets/screenshots/2.jpeg?raw=true "Optional Title") | ![](/assets/screenshots/3.jpeg?raw=true "Optional Title") | ![](/assets/screenshots/4.jpeg?raw=true "Optional Title")
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](/assets/screenshots/5.jpeg?raw=true "Optional Title")  |  ![](/assets/screenshots/6.jpeg?raw=true "Optional Title") |  ![](/assets/screenshots/7.jpeg?raw=true "Optional Title") |  ![]()
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Folder Structure
+```
+lib/
+|- auth/
+|- notifications/
+|- pagesAuth/
+|- profilePage/
+|- settings/
+|- firebase_options.dart
+|- main.dart
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Packages Used:
+```
+pubspec.yaml/
+|- firebase_core
+|- firebase_auth
+|- cloud_firestore
+|- flutter_secure_storage
+|- google_sign_in
+|- firebase_storage
+|- firebase_messaging
+|- flutter_local_notifications
+|- lottie
+|- pinput
+|- font_awesome_flutter
+|- image_picker
+|- url_launcher
+```
+
+## Conclusion
+I will be happy to answer any questions that you may have about this approach.
+
+If you liked my work, don’t forget to ⭐ star the repo to show your support.
